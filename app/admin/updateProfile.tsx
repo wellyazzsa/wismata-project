@@ -9,7 +9,6 @@ type Profile = {
     email: string;
     password: string;
     name: string;
-    nim: string;
     picture: string;
     userId: number;
 };
@@ -24,7 +23,6 @@ const UpdateProfile = ({
     const [email, setEmail] = useState(profile.email);
     const [password, setPassword] = useState(profile.password);
     const [name, setName] = useState(profile.name);
-    const [nim, setNim] = useState(profile.nim); 
     const [picture, setPicture] = useState(profile.picture); 
     const [user, setUser] = useState(profile.userId); 
 
@@ -37,7 +35,6 @@ const UpdateProfile = ({
             email: email,
             password: password,
             name: name,
-            nim: nim,
             picture: picture,
             userId: Number(user)
         })
@@ -84,15 +81,6 @@ const UpdateProfile = ({
                         onChange={(e) => setName(e.target.value)}
                         className="input input-bordered" 
                         placeholder="Full Name"/>
-                    </div>
-                    <div className="form-control w-full">
-                        <label className="label font-bold">NIM</label>
-                        <input 
-                        type="text" 
-                        value={nim}
-                        onChange={(e) => setNim(e.target.value)}
-                        className="input input-bordered" 
-                        placeholder="NIM"/>
                     </div>
                     <div className="form-control w-full">
                         <label className="label font-bold">Picture</label>

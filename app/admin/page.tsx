@@ -12,7 +12,6 @@ const getProfiles = async () => {
             email : true,
             password: true,
             name : true,
-            nim : true,
             picture : true,
             userId : true,
             user : true,
@@ -43,7 +42,6 @@ const Profile = async () => {
                     <th>#</th>
                     <th>Email</th>
                     <th>Name</th>
-                    <th>NIM</th>
                     <th>Profile Pict</th>
                     <th>Role</th>
                     <th className="text-center">Action</th>
@@ -55,7 +53,6 @@ const Profile = async () => {
                     <td> { index + 1 } </td>
                     <td> { profile.email } </td>
                     <td> { profile.name } </td>
-                    <td> { profile.nim } </td>
                     <td> { profile.picture } </td>
                     <td> { profile.user.role }</td>
                     <td className="flex justify-center space-x-1">

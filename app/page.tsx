@@ -1,19 +1,28 @@
-import { getServerSession } from "next-auth";
-import { authOptions } from "./api/auth/[...nextauth]/route";
+"use client";
+
 import { User } from "./user";
-import { LoginButton, LogoutButton } from "./auth";
+import  Navbar from "../components/Navbar";
+import { Hero } from "../components/Hero";
+import slides from '../hero.json';
+import React from "react";
 
 export default async function Home() {
-  const session = await getServerSession(authOptions);
   
   return (
     <main>
-      <LoginButton/>
-      <LogoutButton/>
-      <h2>Server Session</h2>
-      <pre>{JSON.stringify(session)}</pre>
-      <h2>Client Call</h2>
+      <Navbar/>
+      <section>
+      <HeroSection/>
+      </section>
       <User/>
     </main>
   )
 };
+
+function HeroSection() {
+  return (
+    <div>
+      <Hero slides={slides}/>
+    </div>
+  );
+}

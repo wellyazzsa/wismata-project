@@ -18,7 +18,6 @@ export const PATCH = async (request: Request, {params}: {params: {id: string}}) 
             email: body.email,
             password: hashedpassword,
             name: body.name,
-            nim: body.nim,
             picture: body.picture,
             userId: body.userId
         }

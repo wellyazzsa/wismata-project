@@ -3,24 +3,26 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 
-type Content = {
+type Bisnis = {
     id: number;
-    author: string;
-    title: string;
-    subtitle: string;
-    image: string;
-    articleId: number;
+    nameUMKM: String;
+    owner: String;
+    description: String;
+    address: String;
+    category: String;
+    openAt: String;
+    closeAt: String;
 };
 
-const DeleteContent = ({ content }: { content: Content }) => {
+const DeleteBisnis = ({ bisnis }: { bisnis: Bisnis }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();
 
-  const handleDelete = async (contentId: number) => {
+  const handleDelete = async (bisnisId: number) => {
     setIsLoading(true);
-    await axios.delete(`/api/contents/${contentId}`);
+    await axios.delete(`/api/bisnis/${bisnisId}`);
     setIsLoading(false);
     router.refresh();
     setIsOpen(false);
@@ -39,7 +41,7 @@ const DeleteContent = ({ content }: { content: Content }) => {
       <div className={isOpen ? "modal modal-open" : "modal"}>
         <div className="modal-box">
           <h3 className="font-bold text-lg">
-            Are sure to delete {content.title}?
+            Are sure to delete {bisnis.nameUMKM}?
           </h3>
 
           <div className="modal-action">
@@ -49,7 +51,7 @@ const DeleteContent = ({ content }: { content: Content }) => {
             {!isLoading ? (
               <button
                 type="button"
-                onClick={() => handleDelete(content.id)}
+                onClick={() => handleDelete(bisnis.id)}
                 className="btn btn-primary"
               >
                 Yes
@@ -66,4 +68,4 @@ const DeleteContent = ({ content }: { content: Content }) => {
   );
 };
 
-export default DeleteContent;
+export default DeleteBisnis;

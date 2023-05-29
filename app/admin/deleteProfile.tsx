@@ -8,7 +8,6 @@ type Profile = {
   email: string;
   password: string;
   name: string;
-  nim: string;
   picture: string;
   userId: number;
 };

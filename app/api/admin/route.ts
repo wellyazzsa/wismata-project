@@ -15,7 +15,6 @@ export const POST = async (request: Request) => {
             email: body.email,
             password: hashedpassword,
             name: body.name,
-            nim: body.nim,
             picture: body.picture,
             userId: body.userId
         }

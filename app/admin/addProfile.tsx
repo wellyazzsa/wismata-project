@@ -8,7 +8,6 @@ const AddProfile = ({users}: {users : User[]}) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
-    const [nim, setNim] = useState(""); 
     const [picture, setPicture] = useState(""); 
     const [user, setUser] = useState(""); 
 
@@ -23,14 +22,12 @@ const AddProfile = ({users}: {users : User[]}) => {
             email: email,
             password: password,
             name: name,
-            nim: nim,
             picture: picture,
             userId: Number(user)
         })
         setEmail("");
         setPassword("");
         setName("");
-        setNim("");
         setPicture("");
         setUser("");
         router.refresh();
@@ -75,15 +72,6 @@ const AddProfile = ({users}: {users : User[]}) => {
                         onChange={(e) => setName(e.target.value)}
                         className="input input-bordered" 
                         placeholder="Full Name"/>
-                    </div>
-                    <div className="form-control w-full">
-                        <label className="label font-bold">NIM</label>
-                        <input 
-                        type="text" 
-                        value={nim}
-                        onChange={(e) => setNim(e.target.value)}
-                        className="input input-bordered" 
-                        placeholder="NIM"/>
                     </div>
                     <div className="form-control w-full">
                         <label className="label font-bold">Profile Picture</label>
